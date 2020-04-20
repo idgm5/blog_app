@@ -5911,3 +5911,171 @@ Processing by TagsController#index as HTML
 Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 0.2ms | Allocations: 5316)
 
 
+Started GET "/" for ::1 at 2020-04-20 10:15:58 -0500
+  [1m[35m (31.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 23.2ms | Allocations: 4145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 433ms (Views: 350.6ms | ActiveRecord: 1.0ms | Allocations: 36964)
+
+
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPaperclipFieldsToArticle (20200420151803)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_content_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_updated_at" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (51.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420151803"]]
+  [1m[35m (125.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-04-20 10:22:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 6421)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x00007fb8b511c5e0>
+Did you mean?  has_one_attached):
+  
+app/models/article.rb:7:in `<class:Article>'
+app/models/article.rb:3:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-04-20 10:23:29 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.0ms | Allocations: 8273)
+
+
+  
+NoMethodError (undefined method `validates_attachment_content_type' for #<Class:0x00007fb8b4b8fa00>
+Did you mean?  validates_acceptance_of):
+  
+app/models/article.rb:8:in `<class:Article>'
+app/models/article.rb:3:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-04-20 10:23:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 67.2ms | Allocations: 5980)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 275ms (Views: 265.8ms | ActiveRecord: 1.5ms | Allocations: 12932)
+
+
+Started GET "/articles/new" for ::1 at 2020-04-20 10:24:35 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1232.6ms | Allocations: 14247)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1292.7ms | Allocations: 14535)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1299ms (Views: 1297.5ms | ActiveRecord: 0.0ms | Allocations: 18165)
+
+
+Started POST "/articles" for ::1 at 2020-04-20 10:25:09 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"mRO3l1oV5T4TBbGvwGrsbYhziHM9dHpPiS1d/PDRaqrQLZkQGhdkN+j67pq4TxlVMml2+NshbahfGeJ9KpVUrw==", "article"=>{"title"=>"Harley Davidson", "body"=>"NICE", "tag_list"=>"mortobike", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb8b5120500 @tempfile=#<Tempfile:/tmp/RackMultipart20200420-9498-wv9iv.jpg>, @original_filename="harley-davidson-kSNQz1lTBPQ-unsplash.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"harley-davidson-kSNQz1lTBPQ-unsplash.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "mortobike"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "mortobike"], ["created_at", "2020-04-20 15:25:09.489631"], ["updated_at", "2020-04-20 15:25:09.489631"]]
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (1069.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 1442ms (ActiveRecord: 1071.1ms | Allocations: 23985)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20200420152544)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420152544"]]
+  [1m[35m (119.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/articles" for ::1 at 2020-04-20 10:27:43 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"OUhUu3qpM8Nr+wrgQ7B/OgZzgKNAVe2ugG0Bl0k8mNnQD9pSpKoOCO8+IENj9QJ01dDz6XEku6W27BZkwFpI4Q==", "article"=>{"title"=>"Harley Davidson", "body"=>"NICE", "tag_list"=>"mortobike", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffb7869eaf8 @tempfile=#<Tempfile:/tmp/RackMultipart20200420-11023-clg74n.jpg>, @original_filename="harley-davidson-kSNQz1lTBPQ-unsplash.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"harley-davidson-kSNQz1lTBPQ-unsplash.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "mortobike"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 2.6ms | Allocations: 40667)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"articles", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/articles_controller.rb:23:in `create'
+Started GET "/articles" for ::1 at 2020-04-20 10:28:19 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 176ms (Views: 170.3ms | ActiveRecord: 0.2ms | Allocations: 8835)
+
+
+Started GET "/articles/new" for ::1 at 2020-04-20 10:28:25 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 13.5ms | Allocations: 4385)
+  Rendered articles/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 4674)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 8299)
+
+
+Started POST "/articles" for ::1 at 2020-04-20 10:28:56 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"zIPdk5degNtDZC5HweeSxXjONyvCpGVs+rwXGK5MCy+FvfMU11wB0ribcXK5wmf9wtTJoCTxcossiKiZdAg1Kg==", "article"=>{"title"=>"Harley Davidson", "body"=>"A nice bike", "tag_list"=>"motorbike", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffb783772d0 @tempfile=#<Tempfile:/tmp/RackMultipart20200420-11023-uk33lw.jpg>, @original_filename="harley-davidson-kSNQz1lTBPQ-unsplash.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"harley-davidson-kSNQz1lTBPQ-unsplash.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "motorbike"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[36mTag Create (3.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "motorbike"], ["created_at", "2020-04-20 15:28:56.583305"], ["updated_at", "2020-04-20 15:28:56.583305"]]
+  ↳ app/models/article.rb:16:in `block in tag_list='
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/article.rb:16:in `block in tag_list='
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 123.8ms | Allocations: 6601)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"articles", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/articles_controller.rb:23:in `create'
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /home/isaac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
