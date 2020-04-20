@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   include ArticlesHelper
   def index
@@ -25,7 +27,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     flash.notice = "Article '#{@article.title}' Deleted!"
-    redirect_to :action => :index
+    redirect_to action: :index
   end
 
   def edit
@@ -38,6 +40,4 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' Updated!"
     redirect_to article_path(@article)
   end
-
-
 end
