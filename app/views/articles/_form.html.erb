@@ -18,10 +18,11 @@
   </p>
 
   <p>
+    <%= image_tag(@article.main_image) if @article.main_image.attached? %><br />
     <%= f.label :main_image, "Attach an Image"  %><br />
     <%= f.file_field :main_image %>
   </p>
-  
+
   <p>
     <%= f.submit %>
   </p>

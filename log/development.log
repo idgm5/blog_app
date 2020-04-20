@@ -7479,3 +7479,91 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 510)
 
 
+Started GET "/articles/33" for ::1 at 2020-04-20 11:41:17 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 33]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Article"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 33]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of articles/_comment.html.erb [0 times] (Duration: 0.1ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 1.1ms | Allocations: 554)
+  Rendered articles/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 4824)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.5ms | Allocations: 9811)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDE6MzkuNDMwWiIsInB1ciI6ImJsb2Jfa2V5In19--50b0f82099ed3ebb6276e0b89c46e1fc2795478b/harley-davidson-kSNQz1lTBPQ-unsplash.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22harley-davidson-kSNQz1lTBPQ-unsplash.jpg%22%3B+filename%2A%3DUTF-8%27%27harley-davidson-kSNQz1lTBPQ-unsplash.jpg" for ::1 at 2020-04-20 11:41:18 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"harley-davidson-kSNQz1lTBPQ-unsplash.jpg\"; filename*=UTF-8''harley-davidson-kSNQz1lTBPQ-unsplash.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDE6MzkuNDMwWiIsInB1ciI6ImJsb2Jfa2V5In19--50b0f82099ed3ebb6276e0b89c46e1fc2795478b", "filename"=>"harley-davidson-kSNQz1lTBPQ-unsplash"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+Started GET "/articles/33/edit" for ::1 at 2020-04-20 11:41:21 -0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 33]]
+  ↳ app/models/article.rb:24:in `collect'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Article"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/views/articles/_form.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_form.html.erb:21
+  Rendered articles/_form.html.erb (Duration: 10.8ms | Allocations: 4198)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.5ms | Allocations: 8684)
+
+
+Started GET "/articles/33/edit" for ::1 at 2020-04-20 11:42:27 -0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 33]]
+  ↳ app/models/article.rb:24:in `collect'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Article"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/views/articles/_form.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_form.html.erb:21
+  Rendered articles/_form.html.erb (Duration: 9.7ms | Allocations: 3787)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3847)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 274ms (Views: 271.8ms | ActiveRecord: 0.5ms | Allocations: 20502)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d9d88715f97fce1346493f175428c30a8b57e347/harley-davidson-kSNQz1lTBPQ-unsplash.jpg" for ::1 at 2020-04-20 11:42:27 -0500
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d9d88715f97fce1346493f175428c30a8b57e347", "filename"=>"harley-davidson-kSNQz1lTBPQ-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 4adujrum2lvgij3kctrg0t45m88w (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDc6MjcuNzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--8e7d786d0dec861377641499c3cb07c4ba3ffd6a/harley-davidson-kSNQz1lTBPQ-unsplash.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22harley-davidson-kSNQz1lTBPQ-unsplash.jpg%22%3B+filename%2A%3DUTF-8%27%27harley-davidson-kSNQz1lTBPQ-unsplash.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDc6MjcuNzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--8e7d786d0dec861377641499c3cb07c4ba3ffd6a/harley-davidson-kSNQz1lTBPQ-unsplash.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22harley-davidson-kSNQz1lTBPQ-unsplash.jpg%22%3B+filename%2A%3DUTF-8%27%27harley-davidson-kSNQz1lTBPQ-unsplash.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2548)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDc6MjcuNzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--8e7d786d0dec861377641499c3cb07c4ba3ffd6a/harley-davidson-kSNQz1lTBPQ-unsplash.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22harley-davidson-kSNQz1lTBPQ-unsplash.jpg%22%3B+filename%2A%3DUTF-8%27%27harley-davidson-kSNQz1lTBPQ-unsplash.jpg" for ::1 at 2020-04-20 11:42:27 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"harley-davidson-kSNQz1lTBPQ-unsplash.jpg\"; filename*=UTF-8''harley-davidson-kSNQz1lTBPQ-unsplash.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhOR0ZrZFdweWRXMHliSFpuYVdvemEyTjBjbWN3ZERRMWJUZzRkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1oaGNteGxlUzFrWVhacFpITnZiaTFyVTA1UmVqRnNWRUpRVVMxMWJuTndiR0Z6YUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhoY214bGVTMWtZWFpwWkhOdmJpMXJVMDVSZWpGc1ZFSlFVUzExYm5Od2JHRnphQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDQtMjBUMTY6NDc6MjcuNzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--8e7d786d0dec861377641499c3cb07c4ba3ffd6a", "filename"=>"harley-davidson-kSNQz1lTBPQ-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+Started GET "/articles" for ::1 at 2020-04-20 11:42:31 -0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1087)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 4833)
+
+
